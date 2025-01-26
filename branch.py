@@ -10,7 +10,7 @@ st.title("YouTube Video Summarizer")
 yt_link = st.text_input("Enter the YouTube video URL:")
 
 # Set AssemblyAI API Key
-aai.settings.api_key = "ed7a2d6f98c941a18a7b640c6bc35a1b"  # Replace with your actual API key
+aai.settings.api_key = "Your_API_key"  # Replace with your actual API key
 
 def download_video(link):
     """Download the YouTube video and return the file path."""
@@ -38,7 +38,7 @@ def summarize_transcript(transcript):
     """Summarize the transcript using Ollama and return the summary."""
     try:
         client = ollama.Client()
-        model = 'llama3.2:1b'
+        model = 'name_of_your_local_model' #example: 'llama3.2:2b'
         prompt = f"Summarize this video transcript for me:\n\n{transcript}"
         response = client.generate(model=model, prompt=prompt)
         return response.response
